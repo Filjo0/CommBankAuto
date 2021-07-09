@@ -1,7 +1,7 @@
 ﻿using CommBankAutomation.Selenium;
 using NUnit.Framework;
 
-namespace TestProject1.Utilities
+namespace CommBankTests.Utilities
 {
     [TestFixture]
     public class BaseSetup

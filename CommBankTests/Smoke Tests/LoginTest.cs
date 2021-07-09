@@ -1,8 +1,8 @@
 ﻿using CommBankAutomation.Pages;
+using CommBankTests.Utilities;
 using NUnit.Framework;
-using TestProject1.Utilities;
 
-namespace TestProject1.Smoke_Tests
+namespace CommBankTests.Smoke_Tests
 {
     [TestFixture]
     public class Tests : BaseSetup
