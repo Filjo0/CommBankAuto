@@ -8,7 +8,7 @@ namespace CommBankAutomation.Pages
     {
         public static void GoTo()
         {
-            var netBankButton = Driver.Instance.FindElement(By.LinkText("Log on to NetBank"));
+            var netBankButton = Driver.Instance.FindElement(By.CssSelector("[data-tracker-locationid='tl-nb-logon']"));
             netBankButton.Click();
 
             Driver.Instance.SwitchTo().Window(Driver.Instance.WindowHandles.First()).Close();
