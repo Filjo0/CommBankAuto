@@ -6,6 +6,17 @@ namespace CommBankAutomation.Pages
 {
     public static class LoginPage
     {
+        public static bool IsAt
+        {
+            get
+            {
+                var loginInput = Driver.Instance.FindElement(By.Id("txtMyClientNumber_field")).Displayed;
+                var passwordInput = Driver.Instance.FindElement(By.Id("txtMyPassword_field")).Displayed;
+                var logOnButton = Driver.Instance.FindElement(By.Id("btnLogon_field")).Displayed;
+                return loginInput && passwordInput && logOnButton;
+            }
+        }
+
         public static void GoTo()
         {
             var netBankButton = Driver.Instance.FindElement(By.CssSelector("[data-tracker-locationid='tl-nb-logon']"));
@@ -20,17 +31,6 @@ namespace CommBankAutomation.Pages
             {
                 if (!form.Text.Equals("Online")) continue;
                 form.Click();
-            }
-        }
-
-        public static bool IsAt
-        {
-            get
-            {
-                var loginInput = Driver.Instance.FindElement(By.Id("txtMyClientNumber_field")).Displayed;
-                var passwordInput = Driver.Instance.FindElement(By.Id("txtMyPassword_field")).Displayed;
-                var logOnButton = Driver.Instance.FindElement(By.Id("btnLogon_field")).Displayed;
-                return loginInput && passwordInput && logOnButton;
             }
         }
     }

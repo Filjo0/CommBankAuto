@@ -6,14 +6,6 @@ namespace CommBankAutomation.Pages
 {
     public static class OverseasPage
     {
-        public static void GoTo()
-        {
-            MainPage.GoTo();
-
-            var linkTransfer = Driver.Instance.FindElement(By.LinkText("Overseas payment"));
-            linkTransfer.Click();
-        }
-
         public static bool IsAt
         {
             get
@@ -29,6 +21,14 @@ namespace CommBankAutomation.Pages
 
                 return feesAndChargesElementExists && receivingMoneyFromOverseasElementExists;
             }
+        }
+
+        public static void GoTo()
+        {
+            MainPage.GoTo();
+
+            var linkTransfer = Driver.Instance.FindElement(By.LinkText("Overseas payment"));
+            linkTransfer.Click();
         }
     }
 }

@@ -24,7 +24,7 @@ namespace CommBankAutomation.Selenium
 
         public static void Wait(TimeSpan timeSpan)
         {
-            Thread.Sleep((int) (timeSpan.TotalSeconds * 1000));
+            Thread.Sleep((int)(timeSpan.TotalSeconds * 1000));
         }
     }
 }
