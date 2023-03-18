@@ -1,6 +1,6 @@
 ﻿using System.Linq;
 using CommBankAutomation.Selenium;
-using OpenQA.Selenium;
+using Selenium.WebDriver.Extensions;
 
 namespace CommBankAutomation.Pages
 {
@@ -10,28 +10,25 @@ namespace CommBankAutomation.Pages
         {
             get
             {
-                var loginInput = Driver.Instance.FindElement(By.Id("txtMyClientNumber_field")).Displayed;
-                var passwordInput = Driver.Instance.FindElement(By.Id("txtMyPassword_field")).Displayed;
-                var logOnButton = Driver.Instance.FindElement(By.Id("btnLogon_field")).Displayed;
-                return loginInput && passwordInput && logOnButton;
+                var loginInput = Driver.Instance.FindElement(By.Id("txtMyClientNumber_field"));
+                var passwordInput = Driver.Instance.FindElement(By.Id("txtMyPassword_field"));
+                var logOnButton = Driver.Instance.FindElement(By.Id("btnLogon_field"));
+                
+                return loginInput.Enabled && passwordInput.Enabled && logOnButton.Enabled;
             }
         }
 
         public static void GoTo()
         {
-            var netBankButton = Driver.Instance.FindElement(By.CssSelector("[data-tracker-locationid='tl-nb-logon']"));
-            netBankButton.Click();
+            MoneyTransferPage.LogOnToNetBank();
+            SwitchToNewWindow();
+            OrderTravelCardPage.SelectOnline();
+        }
 
+        private static void SwitchToNewWindow()
+        {
             Driver.Instance.SwitchTo().Window(Driver.Instance.WindowHandles.First()).Close();
             Driver.Instance.SwitchTo().Window(Driver.Instance.WindowHandles.Last());
-
-            var forms = Driver.Instance.FindElements(By.CssSelector("span.quickTitle"));
-
-            foreach (var form in forms)
-            {
-                if (!form.Text.Equals("Online")) continue;
-                form.Click();
-            }
         }
     }
 }

@@ -19,7 +19,7 @@ namespace CommBankAutomation.Selenium
 
         public static void Close()
         {
-            Instance.Close();
+            Instance.Quit();
         }
 
         public static void Wait(TimeSpan timeSpan)

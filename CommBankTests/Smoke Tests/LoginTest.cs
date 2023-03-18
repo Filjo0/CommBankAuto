@@ -8,18 +8,18 @@ namespace CommBankTests.Smoke_Tests
     public class Tests : BaseSetup
     {
         [Test]
-        public void User_Can_Go_To_Overseas_Page()
+        public void Can_Go_To_Money_Transfer_Page()
         {
-            OverseasPage.GoTo();
-            Assert.IsTrue(OverseasPage.IsAt, "Failed to open OverseasPage");
+            MoneyTransferPage.GoTo();
+            Assert.IsTrue(MoneyTransferPage.IsAt, "Failed to open MoneyTransfer page.");
         }
 
         [Test]
-        public void User_Can_Go_To_Login_Page()
+        public void Can_Go_To_Login_Page()
         {
-            OverseasPage.GoTo();
+            MoneyTransferPage.GoTo();
             LoginPage.GoTo();
-            Assert.IsTrue(LoginPage.IsAt, "Failed to open Login page");
+            Assert.IsTrue(LoginPage.IsAt, "Failed to open Login page.");
         }
     }
 }
