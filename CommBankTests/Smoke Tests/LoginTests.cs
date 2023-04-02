@@ -4,8 +4,7 @@ using NUnit.Framework;
 
 namespace CommBankTests.Smoke_Tests
 {
-    [TestFixture]
-    public class Tests : BaseSetup
+    public class LoginTests : BaseSetup
     {
         [Test]
         public void Can_Go_To_Money_Transfer_Page()

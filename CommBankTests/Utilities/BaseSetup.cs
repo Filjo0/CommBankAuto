@@ -3,7 +3,6 @@ using NUnit.Framework;
 
 namespace CommBankTests.Utilities
 {
-    [TestFixture]
     public class BaseSetup
     {
         [SetUp]
