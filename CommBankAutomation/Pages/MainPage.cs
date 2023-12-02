@@ -9,9 +9,10 @@ namespace CommBankAutomation.Pages
         public static void GoTo()
         {
             Driver.Instance.Navigate().GoToUrl(Driver.BaseAddress);
-            Driver.Wait(TimeSpan.FromSeconds(5));
+            Driver.Wait(TimeSpan.FromSeconds(1));
             
-            DismissNotification();
+            // No longer being displayed.
+            // DismissNotification();
         }
 
         public static void SelectOverseasPayment()
