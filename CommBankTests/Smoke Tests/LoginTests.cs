@@ -10,7 +10,7 @@ namespace CommBankTests.Smoke_Tests
         public void Can_Go_To_Money_Transfer_Page()
         {
             MoneyTransferPage.GoTo();
-            Assert.IsTrue(MoneyTransferPage.IsAt, "Failed to open MoneyTransfer page.");
+            Assert.That(MoneyTransferPage.IsAt, Is.True, "Failed to open MoneyTransfer page.");
         }
 
         [Test]
@@ -18,7 +18,7 @@ namespace CommBankTests.Smoke_Tests
         {
             MoneyTransferPage.GoTo();
             LoginPage.GoTo();
-            Assert.IsTrue(LoginPage.IsAt, "Failed to open Login page.");
+            Assert.That(LoginPage.IsAt, Is.True, "Failed to open Login page.");
         }
     }
 }
